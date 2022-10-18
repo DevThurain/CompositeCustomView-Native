@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.viewpods.ReactionViewPod xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
     <RelativeLayout
@@ -14,18 +14,18 @@
             android:id="@+id/ivLikeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_like"
             android:layout_marginStart="@dimen/margin_medium_2"
-            android:tint="@color/colorAccent"/>
+            android:src="@drawable/ic_like"
+            android:tint="@color/colorAccent" />
 
         <TextView
             android:id="@+id/tvLikeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/ivLikeCount"
-            android:layout_marginStart="@dimen/margin_small"
             android:layout_gravity="center"
-            android:text="12"/>
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_toEndOf="@id/ivLikeCount"
+            android:text="12" />
 
         <ImageView
             android:id="@+id/ivShareCount"
@@ -33,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_medium_2"
             android:layout_toStartOf="@id/tvShareCount"
-            android:="end"
             android:src="@drawable/ic_share"
             android:tint="@color/colorAccent" />
 
@@ -41,20 +40,20 @@
             android:id="@+id/tvShareCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
-            android:layout_gravity="center"
-            android:layout_marginEnd="@dimen/margin_medium_2"
             android:layout_alignParentEnd="true"
-            android:text="12"/>
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:text="12" />
 
 
         <ImageView
             android:id="@+id/ivCommentCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_comment"
             android:layout_toStartOf="@id/tvCommentCount"
-            android:tint="@color/colorAccent"/>
+            android:src="@drawable/ic_comment"
+            android:tint="@color/colorAccent" />
 
         <TextView
             android:id="@+id/tvCommentCount"
@@ -72,6 +71,7 @@
         android:layout_below="@id/rlReactionCount"
         android:orientation="horizontal"
         android:layout_marginHorizontal="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
         >
 
         <LinearLayout

@@ -4,6 +4,7 @@ import android.view.View
 import com.bumptech.glide.Glide
 import com.padcmyanmar.padcx.padc_x_recyclerview_ypst.data.vos.NewsVO
 import com.padcmyanmar.padcx.padc_x_recyclerview_ypst.delegates.NewsItemDelegate
+import com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.viewpods.ReactionViewPod
 import kotlinx.android.synthetic.main.item_news.view.*
 
 /**
@@ -11,9 +12,10 @@ import kotlinx.android.synthetic.main.item_news.view.*
  * on 2020-01-18.
  */
 
-class NewsViewHolder(itemView: View, delegate: NewsItemDelegate) :
+class NewsViewHolder(itemView: View, val delegate: NewsItemDelegate) :
   BaseNewsViewHolder(itemView) {
 
+    val viewPodNewsReaction = itemView.viewPodNewsReaction as ReactionViewPod
     init {
 
         itemView.setOnClickListener {
@@ -29,6 +31,9 @@ class NewsViewHolder(itemView: View, delegate: NewsItemDelegate) :
             .load(data.heroImage)
             .into(itemView.ivNewsImage)
         itemView.tvNewsHeadLine.text = data.title
+
+        viewPodNewsReaction.setupDelegate(delegate)
+        viewPodNewsReaction.bindData(data)
     }
 
 

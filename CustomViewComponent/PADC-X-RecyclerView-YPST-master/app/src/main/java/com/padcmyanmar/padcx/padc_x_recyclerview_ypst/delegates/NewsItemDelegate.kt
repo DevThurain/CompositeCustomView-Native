@@ -5,6 +5,6 @@ package com.padcmyanmar.padcx.padc_x_recyclerview_ypst.delegates
  * on 2020-01-18.
  */
 
-interface NewsItemDelegate {
+interface NewsItemDelegate : ReactionDelegate{
     fun onTapNewsItem(newsId : Int)
 }

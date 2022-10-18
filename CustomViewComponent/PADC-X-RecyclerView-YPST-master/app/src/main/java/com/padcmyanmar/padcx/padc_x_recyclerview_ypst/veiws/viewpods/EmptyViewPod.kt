@@ -4,12 +4,14 @@ import android.content.Context
 import android.util.AttributeSet
 import android.widget.RelativeLayout
 import com.bumptech.glide.Glide
+import com.padcmyanmar.padcx.padc_x_recyclerview_ypst.delegates.RetryDelegate
 import kotlinx.android.synthetic.main.view_pod_empty.view.*
 
 class EmptyViewPod @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : RelativeLayout(context, attrs, defStyleAttr) {
 
+    lateinit var retryDelegate: RetryDelegate
     override fun onFinishInflate() {
         super.onFinishInflate()
 
@@ -21,7 +23,16 @@ class EmptyViewPod @JvmOverloads constructor(
         Glide.with(context)
             .load(emptyImageUrl)
             .into(ivEmptyImage)
+
+        btnRetry.setOnClickListener {
+            retryDelegate.onRetry()
+        }
     }
+
+    fun setDelegate(delegate: RetryDelegate){
+        retryDelegate = delegate
+    }
+
 
 
 }

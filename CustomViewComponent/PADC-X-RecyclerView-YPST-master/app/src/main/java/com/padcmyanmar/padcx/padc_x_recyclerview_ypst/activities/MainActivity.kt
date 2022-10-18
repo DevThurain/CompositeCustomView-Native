@@ -29,7 +29,7 @@ class MainActivity : BaseActivity(), MainView {
 
         setUpPresenter()
 
-        hideEmptyView()
+//        hideEmptyView()
         setUpSwipeRefresh()
         setUpRecyclerView()
         setUpViewPod()
@@ -45,7 +45,7 @@ class MainActivity : BaseActivity(), MainView {
     }
 
     override fun displayEmptyView() {
-        showEmptyView()
+//        showEmptyView()
     }
 
     override fun enableSwipeRefresh() {
@@ -63,6 +63,7 @@ class MainActivity : BaseActivity(), MainView {
 
     private fun setUpViewPod() {
         viewPodEmpty = vpEmpty as EmptyViewPod
+        viewPodEmpty.setDelegate(mPresenter)
         viewPodEmpty.setEmptyData(EM_NO_NEWS_AVAILABLE, EMPTY_IMAGE_URL)
     }
 
@@ -77,14 +78,18 @@ class MainActivity : BaseActivity(), MainView {
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         rvNews.layoutManager = linearLayoutManager
         rvNews.adapter = mAdapter
+
+
+        rvNews.setEmptyUI(vpEmpty)
+
     }
 
-    private fun showEmptyView() {
-        vpEmpty.visibility = View.VISIBLE
-    }
+//    private fun showEmptyView() {
+//        vpEmpty.visibility = View.VISIBLE
+//    }
 
-    private fun hideEmptyView() {
-        vpEmpty.visibility = View.GONE
-    }
+//    private fun hideEmptyView() {
+//        vpEmpty.visibility = View.GONE
+//    }
 
 }

@@ -3,6 +3,7 @@ package com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.viewpods
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.RelativeLayout
+import com.padcmyanmar.padcx.padc_x_recyclerview_ypst.data.vos.NewsVO
 import com.padcmyanmar.padcx.padc_x_recyclerview_ypst.delegates.ReactionDelegate
 import kotlinx.android.synthetic.main.view_pod_reaction.view.*
 
@@ -16,11 +17,16 @@ class ReactionViewPod @JvmOverloads constructor(
         setupListeners()
     }
 
-    fun setupViewpod(delegate: ReactionDelegate){
+    fun setupDelegate(delegate: ReactionDelegate){
         reactionDelegate = delegate
     }
 
-    fun setupListeners(){
+    fun bindData(newsVO: NewsVO){
+        tvLikeCount.text = newsVO.likedUsers.size.toString()
+        tvCommentCount.text = newsVO.likedUsers.size.toString()
+    }
+
+    private fun setupListeners(){
         llLike.setOnClickListener {
             reactionDelegate.onTapLike()
         }
