@@ -33,6 +33,7 @@ class MainActivity : BaseActivity(), MainView {
         setUpSwipeRefresh()
         setUpRecyclerView()
         setUpViewPod()
+        setupListeners()
         mPresenter.onUiReady(this)
     }
 
@@ -82,6 +83,15 @@ class MainActivity : BaseActivity(), MainView {
 
         rvNews.setEmptyUI(vpEmpty)
 
+    }
+
+    fun setupListeners(){
+        fabShare.setOnClickListener {
+            mPresenter.onTapFAB()
+        }
+    }
+    override fun navigateToModifyCustomView() {
+        startActivity(ModifyCustomViewActivity.getIntent(this))
     }
 
 //    private fun showEmptyView() {

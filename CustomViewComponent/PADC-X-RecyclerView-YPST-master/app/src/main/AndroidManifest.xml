@@ -18,6 +18,7 @@
             android:theme="@style/AppTheme.NoActionBar.TranslucentStatusBar">
 
         </activity>
+        <activity android:name=".activities.ModifyCustomViewActivity" />
         <activity
             android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

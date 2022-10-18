@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ModifyCustomViewActivity">
+
+    <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.components.RoundedConorImageView
+        android:id="@+id/roundedConorImageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="28dp"
+        android:scaleType="centerCrop"
+        app:cornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/news_sample" />
+
+    <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.components.PrefixCustomEditText
+        android:id="@+id/prefixCustomEditText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        app:layout_constraintEnd_toEndOf="@+id/roundedConorImageView"
+        app:layout_constraintStart_toStartOf="@+id/roundedConorImageView"
+        app:layout_constraintTop_toBottomOf="@+id/roundedConorImageView"
+        app:prefixText="Mr."
+        app:prefixTextColor="@color/colorPrimary" />
+
+    <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.components.EmotionalFaceView
+        android:id="@+id/emotionalFaceView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="34dp"
+        app:layout_constraintEnd_toEndOf="@+id/prefixCustomEditText"
+        app:layout_constraintStart_toStartOf="@+id/prefixCustomEditText"
+        app:layout_constraintTop_toBottomOf="@+id/prefixCustomEditText" />
+
+    <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.components.EmotionalFaceView
+        android:id="@+id/btnHappy"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        app:state="happy"
+        app:faceColor="@color/color_full_white"
+        app:layout_constraintStart_toStartOf="@+id/emotionalFaceView"
+        app:layout_constraintTop_toBottomOf="@+id/emotionalFaceView" />
+
+    <com.padcmyanmar.padcx.padc_x_recyclerview_ypst.veiws.components.EmotionalFaceView
+        android:id="@+id/btnSad"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:state="sad"
+        app:faceColor="@color/color_full_white"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        app:layout_constraintEnd_toEndOf="@+id/emotionalFaceView"
+        app:layout_constraintTop_toBottomOf="@+id/emotionalFaceView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
